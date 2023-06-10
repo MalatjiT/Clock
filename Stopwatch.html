@@ -27,7 +27,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
-#sec,#centi,#min {
+#sec,#centi,#min,#hrs {
 font-size: 2rem;
 font-weight: bold;
 }
@@ -67,6 +67,7 @@ color: #000000;
 <body>
 <div class="wrapper">
 <p>
+<span id="hrs"></span>
 <span id="min"></span>
 <span id="sec">00 : </span>
 <span id="centi">00</span>
@@ -81,6 +82,7 @@ color: #000000;
 let seconds= 0;
 let centi = 0;
 let minutes = 0;
+let hours = 0;
 let spanSeconds = document.
 querySelector("#sec");
 let spanCenti = document.
@@ -116,10 +118,17 @@ if (seconds == 60) {
 minutes++;
 seconds = 0;
 spanSeconds.innerHTML = "0" + seconds + " : ";
+min.innerHTML = minutes + " : ";
+
+if (minutes == 60) {
+hours++;
+minutes = 0;
 min.innerHTML = "0" + minutes + " : ";
-}
+hr.innerHTML = hours + " : ";
 if (minutes>9) {
 min.innerHTML = seconds + " : ";
+}
+}
 }
 }
 
