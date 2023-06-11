@@ -30,7 +30,7 @@ flex-direction: column;
    align-items: center;
    justify-content: center;
 }
-#sec,#centi,#min {
+#sec,#centi,#min,#hr {
 font-size: 2rem;
 font-weight: bold;
 font-family: "Roboto Mono", monospace ;
@@ -68,6 +68,7 @@ color: #000000;
 
 <div class="wrapper">
 <p>
+<span id="hr"></span>
 <span id="min"></span>
 <span id="sec">00 : </span>
 <span id="centi">00</span>
@@ -95,7 +96,9 @@ let btnReset = document.
 querySelector("#btn-reset");
 let min = document.
 querySelector("#min");
-
+let hr = document.
+querySelector("#hr");
+   
 let myInterval;
 function startTime() {
 centi++;
@@ -126,7 +129,7 @@ minutes = 0;
 min.innerHTML = "0" + minutes + " : ";
 hr.innerHTML = hours + " : ";
 if (minutes>9) {
-min.innerHTML = seconds + " : ";
+min.innerHTML = minutes + " : ";
 }
 }
 }
