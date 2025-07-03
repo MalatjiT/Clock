@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Digital Clock With ES6</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,25 +19,5 @@
    </nav>
 
 <div id="wrapper"></div>
-<script>
-function showTime() {
-let time = new Date();
-let sec = time.getSeconds();
-let min = time.getMinutes();
-let hr = time.getHours();
-let period; // Before Noon or Afternoon
-if(hr > 12) period = "PM";
-else period = "AM";
-
-// Leading 0 for minutes, seconds and hours
-if (min < 10) min = `0${min}`;
-if (sec < 10) sec= `0${sec}`;
-if (hr < 10) hr = `0${hr}`;
-let div = document.querySelector("#wrapper");
-div.innerHTML = `${hr}:${min}:${sec} ${period}`;
-
-}
-setInterval(showTime,1000);
-</script>
 </body>
 </html>
